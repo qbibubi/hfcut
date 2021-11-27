@@ -21,7 +21,7 @@ void Gauge::Output()
 
         std::cout << ANSI::foreground_red << "[";
 
-        for (int i = 0; i < m_gaugeValue; i++)
+        for (int i = 0; i < m_gaugeWidth; i++)
         {
             if (i < pos)
             {
