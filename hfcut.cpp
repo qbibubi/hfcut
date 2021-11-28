@@ -7,7 +7,7 @@ int main()
     bool bpm = false;
     bool counter = false;
 
-    Menu menu = Menu("WELCOME TO TAP DEMON!", "TAP AS FAST AS YOU CAN!");
+    Menu menu = Menu("WELCOME TO HOW FAST CAN YOU TAP!", "TAP AS FAST AS YOU CAN!");
     menu.AddElement("[CTRL] Test option1", 0);
     menu.AddElement("[ALT] Test option2", 0);
     menu.AddElement(0, 99, false);
