@@ -21,16 +21,20 @@ void Item::Output()
     std::setfill(' ');
 
     if (this->key != "")
-        std::cout << "[" << this->key << ']';
+    {
+        std::cout << "[" << this->key << "]" << std::right << std::setw(10) << this->text;
+    }
+    else
+    {
+        std::cout << this->text << std::right << std::setw(10) ;
+    }
 
-    std::cout << this->text;
-
-    if (status != -1) {
-
-        std::cout << " [";
+    if (status != -1) 
+    {
+        std::cout << std::right << std::setw(10) << "[";
         if (status == 0)
         {
-            std::cout << ANSI::foreground_red << "OFF";
+            std::cout<< ANSI::foreground_red << "OFF";
         }
         else if (status == 1) 
         {

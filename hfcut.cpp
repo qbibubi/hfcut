@@ -5,21 +5,22 @@ int main()
     bool bpm = false;
     bool counter = false;
 
-    Menu menu = Menu("WELCOME TO HOW FAST CAN YOU TAP!", "TAP AS FAST AS YOU CAN!");
-    menu.AddElement("CTRL", "Test option1", 0);
-    menu.AddElement("ALT", "Test option2", 0);
+    Menu menu = Menu("WELCOME TO [PROJECT NAME]!", "I WANT A BLAHAJ!");
+    menu.AddElement("N0", "EXIT", 0);
+    menu.AddElement("N1", "BPM", 0);
+    menu.AddElement("N2", "COUNTER", 0);
     menu.AddElement(0, 99, false);
     menu.Output();
     
     while (true)
     {
-        if (GetAsyncKeyState(VK_LCONTROL))
+        if (GetAsyncKeyState(VK_NUMPAD1))
         {
             bpm = !bpm;
             menu.UpdateElement(0, bpm);
         }
         
-        if (GetAsyncKeyState(VK_LMENU))
+        if (GetAsyncKeyState(VK_NUMPAD2))
         {
             counter = !counter;
             menu.UpdateElement(1);
@@ -36,6 +37,11 @@ int main()
                 menu.UpdateGauge(0, -1);
                 menu.UpdateElement(1);
             }
+        }
+
+        if (GetAsyncKeyState(VK_NUMPAD0))
+        {
+            return 0;
         }
         Sleep(500);
     }
