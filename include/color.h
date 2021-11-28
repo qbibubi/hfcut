@@ -5,7 +5,8 @@
 
 //CREDITS: https://stackoverflow.com/questions/33326039/c-ansi-escape-codes-not-displaying-color-to-console
 
-namespace ANSI {
+namespace ANSI 
+{
     template <class CharT, class Traits>
     constexpr
         std::basic_ostream<CharT, Traits>& reset(std::basic_ostream< CharT, Traits >& os)

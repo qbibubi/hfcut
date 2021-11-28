@@ -8,10 +8,12 @@ class Item
 {
 private:
     std::string text;
+    std::string key = "";
     int status;
 
 public:
     Item(std::string text, int status);
+    Item(std::string key, std::string text, int status);
 
     void Output();
     void UpdateStatus();

@@ -33,7 +33,7 @@ void Gauge::Output()
             }
             else std::cout << " ";
         }
-        std::cout << "] " << int(m_gaugeValue * 100) << " %r" << ANSI::reset << std::endl;
+        std::cout << "] " << int(m_gaugeValue * 100) << "%" << ANSI::reset << std::endl;
     }
 }
 

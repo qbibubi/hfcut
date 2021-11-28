@@ -1,6 +1,7 @@
 #include "../include/item.h"
 #include "../include/menu.h"
 #include <iostream>
+#include <iomanip>
 
 Item::Item(std::string text, int status)
 {
@@ -8,8 +9,20 @@ Item::Item(std::string text, int status)
     this->status = status;
 }
 
+Item::Item(std::string key, std::string text, int status)
+{
+    this->key = key;
+    this->text = text;
+    this->status = status;
+}
+
 void Item::Output()
 {
+    std::setfill(' ');
+
+    if (this->key != "")
+        std::cout << "[" << this->key << ']';
+
     std::cout << this->text;
 
     if (status != -1) {

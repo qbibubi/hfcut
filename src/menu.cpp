@@ -22,6 +22,14 @@ void Menu::AddElement(std::string text, int status)
     this->options.push_back(0);
 }
 
+void Menu::AddElement(std::string key, std::string text, int status)
+{
+    Item option = Item(key, text, status);
+
+    this->items.push_back(option);
+    this->options.push_back(0);
+}
+
 void Menu::AddElement(double gaugeMinValue, double gaugeMaxValue, bool status)
 {
     Gauge gauge = Gauge(gaugeMinValue, gaugeMaxValue, status);

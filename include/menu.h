@@ -25,6 +25,7 @@ public:
     Menu(std::string header, std::string footer);
 
     void AddElement(std::string text, int status);
+    void AddElement(std::string key, std::string text, int status);
     void AddElement(double gaugeMinValue, double gaugeMaxValue, bool status);
     void Output();
     void UpdateElement();
