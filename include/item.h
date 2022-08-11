@@ -1,7 +1,7 @@
 #ifndef ITEM_H
 #define ITEM_H
 
-#include <Windows.h>
+// missing include library "Linux.h"
 #include <string>
 
 class Item

@@ -40,9 +40,8 @@ int main()
         }
 
         if (GetAsyncKeyState(VK_NUMPAD0))
-        {
             return 0;
-        }
+
         Sleep(500);
     }
     
