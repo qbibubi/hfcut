@@ -6,4 +6,5 @@ HFCUT (How Fast Can U Tap) - is a simple CLI game that measures your ability to 
 - [ ] Ncurses rendering and screen refreshing
 - [ ] Registering keystrokes
 - [ ] UI coloring
+- [ ] HFCUT class
 - [ ] Optimization
