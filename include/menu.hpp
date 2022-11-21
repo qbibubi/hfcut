@@ -28,6 +28,6 @@ public:
 
     template <typename T>
     void UpdateElement(int index, T status);
-
+    
     void UpdateGauge(int index, double currentValue);
 };
