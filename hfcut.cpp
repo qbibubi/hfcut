@@ -1,4 +1,10 @@
-#include "include/menu.h"
+#include "include/menu.hpp"
+
+/* The whole file has to be ported from Windows to Linux. 
+ * The Windows version is in the file hfcut.cpp.
+ * For the future reference, the Windows and Linux versions
+ * will have separate files.
+*/
 
 int main()
 {
@@ -14,6 +20,7 @@ int main()
     
     while (true)
     {
+        /*
         if (GetAsyncKeyState(VK_NUMPAD1))
         {
             bpm = !bpm;
@@ -44,6 +51,7 @@ int main()
 
         Sleep(500);
     }
-    
+    */
+
     return 0;
 }
