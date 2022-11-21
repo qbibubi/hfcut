@@ -1,4 +1,5 @@
 #include "include/menu.hpp"
+#include <ncurses.h>
 
 /* The whole file has to be ported from Windows to Linux. 
  * The Windows version is in the file hfcut.cpp.
@@ -8,6 +9,11 @@
 
 int main()
 {
+    initscr();
+    nocbreak();
+    noecho();
+    keypad(stdscr, TRUE);
+
     bool bpm = false;
     bool counter = false;
 
@@ -53,5 +59,6 @@ int main()
     }
     */
 
+    endwin();
     return 0;
 }
