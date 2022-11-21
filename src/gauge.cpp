@@ -1,5 +1,4 @@
 #include "../include/gauge.hpp"
-#include <iostream>
 
 Gauge::Gauge(double gaugeMinValue, double gaugeMaxValue) :
     m_gaugeMinValue(gaugeMinValue), m_gaugeMaxValue(gaugeMaxValue)
@@ -19,21 +18,21 @@ void Gauge::Output()
 
         int pos = m_gaugeWidth * m_gaugeValue;
 
-        std::cout << ANSI::foreground_red << "[";
+        //std::cout << ANSI::foreground_red << "[";
 
         for (int i = 0; i < m_gaugeWidth; i++)
         {
             if (i < pos)
             {
-                std::cout << "=";
+                //std::cout << "=";
             }
             else if (i == pos)
             {
-                std::cout << ">";
+                //std::cout << ">";
             }
-            else std::cout << " ";
+            //else std::cout << " ";
         }
-        std::cout << "] " << int(m_gaugeValue * 100) << "%" << ANSI::reset << std::endl;
+        //std::cout << "] " << int(m_gaugeValue * 100) << "%" << ANSI::reset << std::endl;
     }
 }
 
