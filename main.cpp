@@ -1,6 +1,4 @@
-#include "include/menu.hpp"
-#include <ncurses.h>
-
+#include "include/hfcut.hpp"
 /* The whole file has to be ported from Windows to Linux. 
  * The Windows version is in the file hfcut.cpp.
  * For the future reference, the Windows and Linux versions
@@ -17,6 +15,7 @@ int main()
     bool bpm = false;
     bool counter = false;
 
+    // As of 21st November 2022, I now possess a Blahaj plushie.
     Menu menu = Menu("WELCOME TO [PROJECT NAME]!", "I WANT A BLAHAJ!");
     menu.AddElement("N0", "EXIT", 0);
     menu.AddElement("N1", "BPM", 0);
