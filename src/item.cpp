@@ -1,46 +1,46 @@
-#include "../include/item.h"
-#include "../include/menu.h"
+#include "../include/item.hpp"
+#include "../include/menu.hpp"
 #include <iostream>
 #include <iomanip>
 
 Item::Item(std::string text, int status)
 {
-    this->text = text;
-    this->status = status;
+    this->m_text = text;
+    this->m_status = status;
 }
 
 Item::Item(std::string key, std::string text, int status)
 {
-    this->key = key;
-    this->text = text;
-    this->status = status;
+    this->m_key = key;
+    this->m_text = text;
+    this->m_status = status;
 }
 
 void Item::Output()
 {
     std::setfill(' ');
 
-    if (this->key != "")
+    if (this->m_key != "")
     {
-        std::cout << "[" << this->key << "]" << std::right << std::setw(10) << this->text;
+        std::cout << "[" << this->m_key << "]" << std::right << std::setw(10) << this->m_text;
     }
     else
     {
-        std::cout << this->text << std::right << std::setw(10) ;
+        std::cout << this->m_text << std::right << std::setw(10) ;
     }
 
-    if (status != -1) 
+    if (m_status != -1) 
     {
         std::cout << std::right << std::setw(10) << "[";
-        if (status == 0)
+        if (m_status == 0)
         {
             std::cout<< ANSI::foreground_red << "OFF";
         }
-        else if (status == 1) 
+        else if (m_status == 1) 
         {
             std::cout << ANSI::foreground_yellow << "LOADING";
         }
-        else if (status == 2)
+        else if (m_status == 2)
         {
             std::cout << ANSI::foreground_green << "ON";
         }
@@ -51,27 +51,25 @@ void Item::Output()
 
 void Item::UpdateStatus()
 {
-    if (this->status == 2)
+    switch (this->m_status)
     {
-        this->status = 0;
-    }
-    else if (this->status == 0) 
-    {
-        this->status = 1;
-    }
-    else if (this->status == 1)
-    {
-        this->status = 2;
+    case 0:
+        this->m_status = 1;
+        break;
+    case 1:
+        this->m_status = 2;
+        break;
+    case 2:
+        this->m_status = 0;
+        break;
+    
+    default:
+        break;
     }
 }
 
-void Item::UpdateStatus(int status)
+template <typename T>
+void Item::UpdateStatus(T status)
 {
-    this->status = status;
-}
-
-void Item::UpdateStatus(bool status)
-{
-    int iStatus = status ? 2 : 0;
-    this->status = iStatus;
+    this->m_status = status;
 }

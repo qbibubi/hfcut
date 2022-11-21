@@ -1,5 +1,4 @@
-#ifndef COLOR
-#define COLOR
+#pragma once
 
 #include <ostream>
 
@@ -35,4 +34,3 @@ namespace ANSI
         return os << "\033[93m";
     }
 }
-#endif // COLOR

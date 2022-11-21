@@ -1,5 +1,4 @@
-#ifndef GAUGE_H
-#define GAUGE_H
+#pragma once
 
 #include "color.h"
 
@@ -19,9 +18,7 @@ public:
 
     void Output();
     void Update(double currentValue);
-    double GetProgress() { return m_gaugeValue; }
-    bool GetState() { return m_active; }
+    inline double GetProgress() { return m_gaugeValue; }
+    inline bool GetState() { return m_active; }
     void SetState(bool status);
 };
-
-#endif // GAUGE_H

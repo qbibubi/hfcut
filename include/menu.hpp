@@ -1,20 +1,15 @@
-#ifndef MENU_H
-#define MENU_H
+#pragma once
 
 #include <string>
 #include <vector>
-#include "item.h"
-#include "gauge.h"
-
-class Item;     // Forward declaration
-class Gauge;    // of the classes
+#include "item.hpp"
+#include "gauge.hpp"
 
 class Menu
 {
 private:
     std::string m_text;
     std::string m_footer = "";
-    void ShowCursor(bool showFlag);
 
 public:
     std::vector<Item> items;
@@ -30,9 +25,9 @@ public:
     void Output();
     void UpdateElement();
     void UpdateElement(bool toggle);
-    void UpdateElement(int index, int status);
-    void UpdateElement(int index, bool status);
+
+    template <typename T>
+    void UpdateElement(int index, T status);
+
     void UpdateGauge(int index, double currentValue);
 };
-
-#endif // MENU_H
