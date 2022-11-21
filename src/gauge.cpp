@@ -1,4 +1,4 @@
-#include "../include/gauge.h"
+#include "../include/gauge.hpp"
 #include <iostream>
 
 Gauge::Gauge(double gaugeMinValue, double gaugeMaxValue) :
@@ -41,8 +41,7 @@ void Gauge::Update(double currentValue)
 {
     this->m_active = true;
 
-    if (currentValue == -1)
-        this->m_active = false;
+    if (currentValue == -1) this->m_active = false;
 
     this->m_currentValue = currentValue;
 }

@@ -16,10 +16,12 @@ Item::Item(std::string key, std::string text, int status)
     this->m_status = status;
 }
 
+/* Output will go through a big overhaul
+ * due to swapping to ncurses
+*/
+
 void Item::Output()
 {
-    std::setfill(' ');
-
     if (this->m_key != "")
     {
         std::cout << "[" << this->m_key << "]" << std::right << std::setw(10) << this->m_text;
