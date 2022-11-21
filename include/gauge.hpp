@@ -15,7 +15,7 @@ public:
     Gauge(double gaugeMinValue, double gaugeMaxValue, bool status);
 
     void Output();
-    void Update(double currentValue);
+    void Update(const double &currentValue);
     
     inline double GetProgress() 
     { return m_gaugeValue; }
@@ -23,5 +23,5 @@ public:
     inline bool GetState() 
     { return m_active; }
     
-    void SetState(bool status);
+    void SetState(const bool &status);
 };

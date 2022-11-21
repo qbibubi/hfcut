@@ -1,14 +1,13 @@
 #include "../include/gauge.hpp"
 
-Gauge::Gauge(double gaugeMinValue, double gaugeMaxValue) :
-    m_gaugeMinValue(gaugeMinValue), m_gaugeMaxValue(gaugeMaxValue)
+Gauge::Gauge(double gaugeMinValue, double gaugeMaxValue) 
+    : m_gaugeMinValue(gaugeMinValue), m_gaugeMaxValue(gaugeMaxValue)
 {
     this->m_active = (gaugeMinValue < gaugeMaxValue);
 }
 
-Gauge::Gauge(double gaugeMinValue, double gaugeMaxValue, bool status) :
-    m_gaugeMinValue(gaugeMinValue), m_gaugeMaxValue(gaugeMaxValue), m_active(status)
-{}
+Gauge::Gauge(double gaugeMinValue, double gaugeMaxValue, bool status)
+    : m_gaugeMinValue(gaugeMinValue), m_gaugeMaxValue(gaugeMaxValue), m_active(status) {}
 
 void Gauge::Output()
 {
@@ -36,16 +35,17 @@ void Gauge::Output()
     }
 }
 
-void Gauge::Update(double currentValue)
+void Gauge::Update(const double &currentValue)
 {
     this->m_active = true;
 
-    if (currentValue == -1) this->m_active = false;
+    if (currentValue == -1) 
+        this->m_active = false;
 
     this->m_currentValue = currentValue;
 }
 
-void Gauge::SetState(bool status)
+void Gauge::SetState(const bool &status)
 {
     this->m_active = status;
 }
