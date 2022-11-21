@@ -1,5 +1,4 @@
 #include "../include/menu.hpp"
-#include <iostream>
 
 Menu::Menu(std::string text) : m_text(text) {}
 
@@ -83,7 +82,7 @@ void Menu::UpdateElement(int index, T status)
         items[index].UpdateStatus(status);
     }
     catch (const std::exception& e) { 
-        std::cout << e.what(); 
+        //std::cout << e.what(); 
     };
     
     this->Output();
@@ -96,7 +95,7 @@ void Menu::UpdateGauge(int index, double currentValue)
         this->gauges[index].Update(currentValue);
     }
     catch (const std::exception& e) { 
-        std::cout << e.what(); 
+        //std::cout << e.what(); 
     };
 
     this->Output();

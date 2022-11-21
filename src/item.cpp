@@ -1,6 +1,5 @@
 #include "../include/item.hpp"
 #include "../include/menu.hpp"
-#include <iostream>
 #include <iomanip>
 
 Item::Item(std::string text, int status)
@@ -24,31 +23,31 @@ void Item::Output()
 {
     if (this->m_key != "")
     {
-        std::cout << "[" << this->m_key << "]" << std::right << std::setw(10) << this->m_text;
+        //std::cout << "[" << this->m_key << "]" << std::right << std::setw(10) << this->m_text;
     }
     else
     {
-        std::cout << this->m_text << std::right << std::setw(10) ;
+        //std::cout << this->m_text << std::right << std::setw(10) ;
     }
 
     if (m_status != -1) 
     {
-        std::cout << std::right << std::setw(10) << "[";
+        //std::cout << std::right << std::setw(10) << "[";
         if (m_status == 0)
         {
-            std::cout<< ANSI::foreground_red << "OFF";
+            //std::cout<< ANSI::foreground_red << "OFF";
         }
         else if (m_status == 1) 
         {
-            std::cout << ANSI::foreground_yellow << "LOADING";
+            //std::cout << ANSI::foreground_yellow << "LOADING";
         }
         else if (m_status == 2)
         {
-            std::cout << ANSI::foreground_green << "ON";
+            //std::cout << ANSI::foreground_green << "ON";
         }
-        std::cout << ANSI::reset << "]";
+        //std::cout << ANSI::reset << "]";
     }
-    std::cout << std::endl;
+    //std::cout << std::endl;
 }
 
 void Item::UpdateStatus()
