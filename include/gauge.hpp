@@ -1,7 +1,5 @@
 #pragma once
 
-#include "color.h"
-
 class Gauge
 {
 private:
@@ -18,7 +16,12 @@ public:
 
     void Output();
     void Update(double currentValue);
-    inline double GetProgress() { return m_gaugeValue; }
-    inline bool GetState() { return m_active; }
+    
+    inline double GetProgress() 
+    { return m_gaugeValue; }
+    
+    inline bool GetState() 
+    { return m_active; }
+    
     void SetState(bool status);
 };
