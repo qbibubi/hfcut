@@ -17,10 +17,10 @@ public:
     void Output();
     void Update(const double &currentValue);
     
-    inline double GetProgress() 
+    inline double GetProgress()
     { return m_gaugeValue; }
     
-    inline bool GetState() 
+    inline bool GetState()
     { return m_active; }
     
     void SetState(const bool &status);

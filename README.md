@@ -2,6 +2,7 @@
 HFCUT (How Fast Can U Tap) is a simple CLI game that measures your ability to tap two keys in certain BPM threshold for a set amount of time using the terminal and ncurses library.
 
 # TODO
+- [ ] Alter the project structure
 - [x] Port from Windows to Linux
 - [ ] CMake
     - [ ] CMake setup for compilation and building

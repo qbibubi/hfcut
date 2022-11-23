@@ -9,7 +9,7 @@ class Menu
 {
 private:
     std::string m_text;
-    std::string m_footer = "";
+    std::string m_footer;
 
 public:
     std::vector<Item> items;
@@ -18,6 +18,7 @@ public:
 
     Menu(std::string text);
     Menu(std::string header, std::string footer);
+    ~Menu() = default;
 
     void AddElement(std::string text, int status);
     void AddElement(std::string key, std::string text, int status);
